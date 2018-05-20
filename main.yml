@@ -1,0 +1,9 @@
+---
+- name: Install globus, Globus Connect Server, and deplay an endpoint on host
+  hosts: localhost
+  remote_user: root
+
+  roles:
+    - ansible-setup-globus-endpoint
+
+#?
