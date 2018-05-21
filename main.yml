@@ -4,6 +4,6 @@
   remote_user: root
 
   roles:
-    - ansible-setup-globus-endpoint
+   - ansible-role-globus-server-setup
 
 #?
