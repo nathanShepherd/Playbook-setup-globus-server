@@ -1,7 +1,12 @@
 ---
 - name: Install globus, Globus Connect Server, and deplay an endpoint on host
   hosts: localhost
-  remote_user: root
+  become: yes
+  become_method: sudo
+  gather_facts: no
+  tasks:
+  - name: "sudo to root"
+    command: /usr/bin/whoami
 
   roles:
    - ansible-role-globus-server-setup
