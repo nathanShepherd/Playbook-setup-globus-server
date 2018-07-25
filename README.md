@@ -9,6 +9,7 @@ The on-screen prompts will ask for the name of the Endpoint to be created and wh
 ```
 sudo globus-connect-server-setup
 ```
+Authenticate Endpoint by entering a Globus ID and password
 
 ### If you do not have Ansible installed on your machine
 ```
