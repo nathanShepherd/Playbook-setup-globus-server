@@ -14,9 +14,6 @@
   roles:
    - ansible-role-globus-server-setup
  
-   #https://github.com/luisico/ansible-gridftp
-   #- ansible-gridftp
-
   vars_prompt:
   - name: "endpoint_name"
     prompt: "Please enter the name of this endpoint"
