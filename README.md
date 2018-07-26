@@ -1,3 +1,4 @@
+This playbook will install the Globus-Connect-Server software and prerequisite software. Then an endpoint will be initialized on the host. After running this playbook, globus-url-copy can be used in the commandline.
 
 ## Run the playbook with the following incantation in the command line:
 ```
