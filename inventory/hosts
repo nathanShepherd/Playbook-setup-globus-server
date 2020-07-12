@@ -15,6 +15,7 @@ ansible_become_user=root
 #ansible_become_method=su
 
 [ps-testpoints]
+centos7 endpoint_name="GlobusTestpoint" is_public="False"
 
 [ps-toolkits]
 

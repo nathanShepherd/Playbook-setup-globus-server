@@ -7,7 +7,7 @@ hosts = [
       
       [ "esmond",		"10.0.0.2" ],
       [ "centos7",		"10.0.0.3" ],
-      [ "ubuntu18",		"10.0.0.4" ]
+      [ "testpoint",		"10.0.0.4" ]
 ]
 
 private_network_name = "perfsonar-"
@@ -55,6 +55,17 @@ Vagrant.configure("2") do |config|
 	
       SHELL
 
+      # Provision globus testpoint
+      #if name == "centos7"
+      #  host.vm.provision :ansible do |ansible|
+      #    ansible.groups = {
+      #      "ps-testpoints" => ["centos7"]
+      #    }
+      #    ansible.limit = "all"
+      #    ansible.playbook = "main.yml"
+      #  end
+      #end
+
    end  # Config
 
   end  # hosts.each
@@ -68,7 +79,7 @@ Vagrant.configure("2") do |config|
 	"ansible_become_method" => "sudo",
 	"perfsonar_os_update" => "False"
       },
-      "ps-testpoints" => ["centos7", "ubuntu18"],
+      "ps-testpoints" => ["centos7", "testpoint"], #, "ubuntu18"],
       "ps-testpoints:vars" => {
 	"perfsonar_archive_auth_interfaces" => "{{ ansible_all_ipv4_addresses }}",
 	"perfsonar_archive_hosts" => "{{ groups['ps-archives'] }}"
@@ -76,7 +87,9 @@ Vagrant.configure("2") do |config|
       "ps-archives" => ["esmond"]
     }
     ansible.limit = "all",
-    ansible.playbook = "perfsonar.yml"
+    #skipped during testing
+    #ansible.playbook = "perfsonar.yml"
+    ansible.playbook = "main.yml"
   end
 
 end

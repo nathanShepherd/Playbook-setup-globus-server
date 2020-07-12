@@ -1,10 +1,13 @@
 This playbook will install the Globus-Connect-Server software and prerequisite software. Then an endpoint will be initialized on the host. After running this playbook, globus-url-copy can be used in the commandline.
 
-## Run the playbook with the following incantation in the command line:
+## Run the playbook in the command line
 ```
-ansible-playbook main.yml --user root --ask-pass
+ansible-playbook main.yml --user root --ask-pass --extra-vars "endpoint_name=NAME is_public=True
 ```
-The on-screen prompts will ask for the name of the Endpoint to be created and whether it should be made public.
+
+Variables set at runtime include:
+- endpoint_name: defaults to 'NAME', name for globus endpoint (Seperate from hostname)
+- is_public : defaults to 'False', whether to publish results to globus (does not affect test)
 
 ## Start the Globus Endpoint after running the Playbook
 ```

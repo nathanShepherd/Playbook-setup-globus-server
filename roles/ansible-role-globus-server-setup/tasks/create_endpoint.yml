@@ -10,20 +10,23 @@
 # Edit config file
 # http://docs.ansible.com/ansible/latest/modules/lineinfile_module.html
 
-- lineinfile:
-    path: /etc/globus-connect-server.conf
-    regexp: "^Name ="
-    line: 'Name = {{ endpoint_name }}'
+#- lineinfile:
+#    path: /etc/globus-connect-server.conf
+#    regexp: "^Name ="
+    #line: 'Name = {{ endpoint_name }}'
+#    line: 'Name = endpoint'
 
-- lineinfile:
-    path: /etc/globus-connect-server.conf
-    regexp: "^Public ="
-    line: 'Public = {{ is_public }}'
+#- lineinfile:
+#    path: /etc/globus-connect-server.conf
+#    regexp: "^Public ="
+#    #line: 'Public = {{ is_public }}'
+#    line: 'Public = False'
 
 
 
 
 #- name: Setup server
-#  command: globus-connect-server-setup
+  #command: globus-connect-server endpoint setup "ExampleName" -c 47fb25e3-77cf-4d6e-975d-124efc6f3916 -o admin@example.org --organization "OrgName" --private
+  #
 #  use expect prompts
 #  http://docs.ansible.com/ansible/latest/modules/expect_module.html
